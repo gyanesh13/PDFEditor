@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 
 import PDFPreview from "../../components/pdf/PDFPreview";
 
-import { getPdfPageCount } from "../../services/pdf/SplitPdf";
+import { getPdfPageCount } from "../../services/pdf/splitPdf";
 import { deletePdfPages } from "../../services/pdf/deletePdf";
 
 import "./DeletePDF.css";

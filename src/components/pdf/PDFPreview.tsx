@@ -33,7 +33,7 @@ export default function PDFPreview({
         loadedPdf = document;
 
         if (cancelled) {
-          await document.destroy();
+          await document.cleanup();
           return;
         }
 
@@ -52,7 +52,7 @@ export default function PDFPreview({
     return () => {
       cancelled = true;
       if (loadedPdf) {
-        void loadedPdf.destroy();
+        void loadedPdf.cleanup();
       }
     };
   }, [file]);

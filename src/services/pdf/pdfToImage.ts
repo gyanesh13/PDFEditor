@@ -141,6 +141,6 @@ export async function pdfToImages(
       count: selectedPages.length,
     };
   } finally {
-    await pdf.destroy();
+    await pdf.cleanup();
   }
 }
