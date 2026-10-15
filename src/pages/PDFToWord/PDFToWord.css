@@ -1,0 +1,246 @@
+
+.pdf-word-page {
+  min-height: 100vh;
+  background: #f8fafc;
+  color: #182746;
+}
+
+.pdf-word-container {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 36px 24px 80px;
+}
+
+.pdf-word-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #64748b;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.pdf-word-heading {
+  margin: 42px 0 36px;
+  text-align: center;
+}
+
+.pdf-word-heading-icon {
+  width: 66px;
+  height: 66px;
+  margin: 0 auto 20px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: #eaf2ff;
+  color: #1769ff;
+}
+
+.pdf-word-heading h1 {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 38px);
+}
+
+.pdf-word-heading p {
+  max-width: 550px;
+  margin: 13px auto 0;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.pdf-word-dropzone {
+  min-height: 310px;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 2px dashed #cbd5e1;
+  border-radius: 18px;
+  background: white;
+  color: #1769ff;
+}
+
+.pdf-word-dropzone.dragging {
+  border-color: #1769ff;
+  background: #eef5ff;
+}
+
+.pdf-word-dropzone h2 {
+  margin: 18px 0 5px;
+  color: #182746;
+}
+
+.pdf-word-dropzone p {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.pdf-word-dropzone button,
+.pdf-word-actions button,
+.pdf-word-success button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 27px;
+  border: none;
+  border-radius: 10px;
+  background: #1769ff;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pdf-word-file-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  border: 1px solid #e5eaf1;
+  border-radius: 14px;
+  background: white;
+}
+
+.pdf-word-file-icon {
+  width: 55px;
+  height: 60px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: #fff1f2;
+  color: #e11d48;
+}
+
+.pdf-word-file-details {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.pdf-word-file-details strong {
+  overflow-wrap: anywhere;
+}
+
+.pdf-word-file-details span {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.pdf-word-file-card > button {
+  width: 38px;
+  height: 38px;
+  border: 1px solid #e5eaf1;
+  border-radius: 8px;
+  background: white;
+  color: #ef4444;
+  cursor: pointer;
+}
+
+.pdf-word-actions {
+  margin-top: 26px;
+  padding: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  border: 1px solid #e5eaf1;
+  border-radius: 14px;
+  background: white;
+}
+
+.pdf-word-info {
+  max-width: 440px;
+}
+
+.pdf-word-info h3 {
+  margin: 0 0 10px;
+}
+
+.pdf-word-info p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.pdf-word-actions button {
+  flex-shrink: 0;
+}
+
+.pdf-word-actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.pdf-word-success {
+  margin-top: 26px;
+  padding: 42px 25px;
+  border: 1px solid #d1fae5;
+  border-radius: 16px;
+  background: white;
+  text-align: center;
+  color: #16a34a;
+}
+
+.pdf-word-success h2 {
+  margin: 15px 0 8px;
+  color: #182746;
+}
+
+.pdf-word-success p {
+  color: #64748b;
+}
+
+.pdf-word-stats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0 25px;
+}
+
+.pdf-word-stats span {
+  padding: 9px 13px;
+  border-radius: 8px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 13px;
+}
+
+.pdf-word-error {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 9px;
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.pdf-word-spinner {
+  animation: pdf-word-spin 1s linear infinite;
+}
+
+@keyframes pdf-word-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 650px) {
+  .pdf-word-container {
+    padding: 24px 16px 60px;
+  }
+
+  .pdf-word-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pdf-word-actions button {
+    width: 100%;
+  }
+}

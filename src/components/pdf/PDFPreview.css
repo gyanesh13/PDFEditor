@@ -1,0 +1,136 @@
+.pdf-preview {
+  margin-top: 28px;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid #e5eaf1;
+  border-radius: 16px;
+}
+
+.pdf-preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.pdf-preview-header h3 {
+  margin: 0 0 6px;
+  font-size: 19px;
+  color: #182746;
+}
+
+.pdf-preview-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.pdf-preview-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.pdf-preview-actions button {
+  padding: 9px 13px;
+  background: #eef4ff;
+  border: 1px solid #d9e6ff;
+  color: #1769ff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.pdf-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+  gap: 18px;
+}
+
+.pdf-thumbnail {
+  min-width: 0;
+  padding: 10px;
+  border: 2px solid #e5eaf1;
+  border-radius: 12px;
+  background: #fff;
+  cursor: pointer;
+  transition: 0.2s ease;
+  text-align: left;
+}
+
+.pdf-thumbnail:hover {
+  border-color: #a9c7ff;
+}
+
+.pdf-thumbnail.selected {
+  border-color: #1769ff;
+  background: #f3f8ff;
+  box-shadow: 0 0 0 2px rgba(23, 105, 255, 0.08);
+}
+
+.pdf-thumbnail-canvas {
+  min-height: 175px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #f8fafc;
+  border-radius: 6px;
+}
+
+.pdf-thumbnail-canvas canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.pdf-thumbnail-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.pdf-thumbnail-check {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #cbd5e1;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.pdf-thumbnail.selected .pdf-thumbnail-check {
+  background: #1769ff;
+  color: #fff;
+  border-color: #1769ff;
+}
+
+.pdf-preview-status {
+  padding: 28px;
+  margin-top: 24px;
+  text-align: center;
+  background: #fff;
+  border-radius: 12px;
+  color: #64748b;
+}
+
+@media (max-width: 600px) {
+  .pdf-preview {
+    padding: 16px;
+  }
+
+  .pdf-preview-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .pdf-preview-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+}

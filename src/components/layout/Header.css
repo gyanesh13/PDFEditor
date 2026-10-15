@@ -1,0 +1,446 @@
+
+/* ================================
+   HEADER BASE
+================================ */
+
+.header {
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #e9edf5;
+}
+
+.header .nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 76px;
+}
+
+/* ================================
+   LOGO
+================================ */
+
+.header .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  color: #17233d;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.header .logo-icon {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #1769ff;
+}
+
+.header .logo-text {
+  font-size: 21px;
+}
+
+/* ================================
+   DESKTOP NAVIGATION
+================================ */
+
+.header .desktop-nav {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  gap: 16px;
+}
+
+.header .desktop-nav > a,
+.header .nav-dropdown {
+  color: #475569;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.header .desktop-nav > a {
+  display: flex;
+  align-items: center;
+}
+
+.header .desktop-nav a.active {
+  color: #1769ff;
+}
+
+.header .header-nav-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.header .nav-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 3px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.header .nav-dropdown:hover,
+.header .nav-dropdown.is-open {
+  color: #1769ff;
+}
+
+.header .nav-dropdown svg {
+  transition: transform 0.2s ease;
+}
+
+.header .nav-dropdown.is-open svg {
+  transform: rotate(180deg);
+}
+
+/* ================================
+   DESKTOP DROPDOWNS
+================================ */
+
+.header-tools-menu {
+  position: absolute;
+  top: calc(100% - 7px);
+  left: 0;
+  z-index: 1100;
+  width: 235px;
+  max-height: min(70vh, 430px);
+  overflow-y: auto;
+  padding: 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 13px;
+  background: #ffffff;
+  box-shadow:
+    0 16px 40px rgba(15, 23, 42, 0.14);
+  animation: dropdownFade 0.18s ease;
+}
+
+.header-tools-menu-title {
+  padding: 9px 11px 10px;
+  color: #94a3b8;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.header .header-tools-menu a {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 11px;
+  border-radius: 8px;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.header .header-tools-menu a svg {
+  flex-shrink: 0;
+  color: #1769ff;
+}
+
+.header .header-tools-menu a:hover {
+  background: #eff6ff;
+  color: #1769ff;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================
+   HEADER ACTIONS
+================================ */
+
+.header .nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header .icon-button {
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.header .icon-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.header-desktop-auth {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ================================
+   LOGIN / SIGN UP
+================================ */
+
+.header .login-button,
+.header .signup-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 17px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.header .login-button {
+  color: #334155;
+}
+
+.header .login-button:hover {
+  color: #1769ff;
+}
+
+.header .signup-button {
+  background: #1769ff;
+  color: #ffffff;
+}
+
+.header .signup-button:hover {
+  background: #0e54d5;
+}
+
+.auth-loading {
+  color: #64748b;
+  font-size: 13px;
+}
+
+/* ================================
+   USER PROFILE
+================================ */
+
+.header-account {
+  position: relative;
+}
+
+.header-account-trigger {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 5px 8px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.header-account-avatar {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #dbeafe;
+  color: #1769ff;
+  font-weight: 800;
+}
+
+.header-account-name {
+  max-width: 130px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.header-account-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 1200;
+  width: 240px;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow:
+    0 10px 30px rgba(15, 23, 42, 0.12);
+}
+
+.header-account-email {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.header-account-email strong {
+  color: #17233d;
+  font-size: 13px;
+}
+
+.header-account-email span {
+  color: #64748b;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.header-account-logout {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 0 0;
+  border: 0;
+  background: none;
+  color: #dc2626;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.header-account-menu p {
+  color: #dc2626;
+  font-size: 12px;
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+.header-mobile-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border: 0;
+  background: transparent;
+  color: #334155;
+  cursor: pointer;
+}
+
+.header-mobile-nav {
+  display: none;
+}
+
+@media (max-width: 1050px) {
+  .header .desktop-nav {
+    display: none;
+  }
+
+  .header-desktop-auth {
+    display: none;
+  }
+
+  .header-mobile-toggle {
+    display: inline-flex;
+  }
+
+  .header-mobile-nav {
+    display: flex;
+    flex-direction: column;
+    max-height: 75vh;
+    overflow-y: auto;
+    padding: 12px 24px 22px;
+    border-top: 1px solid #e2e8f0;
+    background: #ffffff;
+  }
+
+  .header-mobile-nav > a,
+  .header-mobile-group > button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 13px 8px;
+    border: 0;
+    background: transparent;
+    color: #334155;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .header-mobile-group > button svg {
+    flex-shrink: 0;
+  }
+
+  .header-mobile-links {
+    display: flex;
+    flex-direction: column;
+    padding-left: 16px;
+    border-radius: 8px;
+    background: #f8fafc;
+  }
+
+  .header-mobile-links a {
+    padding: 11px 8px;
+    color: #475569;
+    font-size: 13px;
+    text-decoration: none;
+  }
+
+  .header-mobile-links a:hover {
+    color: #1769ff;
+  }
+
+  .header-mobile-auth {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 8px 4px;
+    margin-top: 10px;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  .header-mobile-auth .header-account-menu {
+    left: 0;
+    right: auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .header .nav {
+    gap: 10px;
+  }
+
+  .header .logo-text {
+    font-size: 17px;
+  }
+
+  .header .nav-actions {
+    gap: 5px;
+  }
+
+  .header-account-name {
+    display: none;
+  }
+}
